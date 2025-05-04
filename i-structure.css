@@ -9,7 +9,6 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow-y: auto;
     position: relative;
 }
 
@@ -95,9 +94,10 @@ body {
 }
 
 /* Анимационные классы */
-.animate-heading { transform: translateY(-20px); }
-.animate-text { transform: translateX(-20px); }
+.animate-heading { opacity: 0; }
+.animate-text { opacity: 0; }
 
+/* Стили для текста */
 .container h1 {
     color: yellow;
     font-size: 24px;
@@ -129,7 +129,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* Кнопка */
+/* Кнопка (для согласованности) */
 .btn {
     padding: 10px 20px;
     background-color: yellow;
