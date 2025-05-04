@@ -1,2 +1,10 @@
 # MSF-Syte
-The official website of the PMCs MSF-043
+
+**eng:**
+Official website of the private military company MSF-043 (Military Special Forces)
+
+**rus:**
+Официальный сайт частной военной компании ВССН-043 (Военные Силы Специального Назначения)
+
+**info:**
+Only works on computers. | Работает только на компютерах.
