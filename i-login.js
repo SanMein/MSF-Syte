@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.navbar a');
     const currentPage = window.location.pathname.split('/').pop();
 
-    const activeLink = Array.from(links).find(link => link.getAttribute('href') === currentPage);
     if (currentPage === 'i-login.html') {
         document.getElementById('login-link').classList.add('active');
     }
@@ -118,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Ключ для шифрования (в реальном приложении должен быть безопасно передан)
+    // Ключ для шифрования
     const ENCRYPTION_KEY = 'msf043-secret-key';
 
     // Функции шифрования и дешифрования
@@ -129,6 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function decryptData(encryptedData) {
         const bytes = CryptoJS.AES.decrypt(encryptedData, ENCRYPTION_KEY);
         return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    }
+
+    // Проверка валидности зашифрованных данных
+    function isValidEncryptedData(data) {
+        if (!data || typeof data !== 'string') return false;
+        try {
+            const bytes = CryptoJS.AES.decrypt(data, ENCRYPTION_KEY);
+            const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+            JSON.parse(decrypted);
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 
     // Функция отображения уведомлений
@@ -181,11 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Загрузка зашифрованных данных из localStorage
     let users = [];
     const encryptedUsers = localStorage.getItem('users');
-    if (encryptedUsers) {
+    if (encryptedUsers && isValidEncryptedData(encryptedUsers)) {
         try {
             users = decryptData(encryptedUsers);
         } catch (e) {
-            showNotification('Ошибка при дешифровании данных пользователей.');
+            console.error('Ошибка дешифрования:', e);
+            localStorage.removeItem('users');
             users = [];
         }
     }
@@ -201,10 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user) {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('currentUser', encryptData(user));
-            localStorage.setItem('accessLevel', 'δέлта (Дельта)');
-            window.location.href = "personal-account.html";
+            localStorage.setItem('accessLevel', 'δέлτα (Дельта)');
+            window.location.href = "i-personal-account.html";
         } else {
-            showNotification("Такой логин не зарегистрирован.");
+            showNotification("Неверный логин или пароль.");
         }
     });
 
@@ -223,14 +236,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 login: newLogin,
                 password: newPassword,
                 registrationDate: new Date().toISOString(),
-                accessLevel: 'δέлта (Дельта)'
+                accessLevel: 'δέлτα (Дельта)'
             };
             users.push(newUser);
             localStorage.setItem('users', encryptData(users));
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('currentUser', encryptData(newUser));
             localStorage.setItem('accessLevel', 'δέлта (Дельта)');
-            window.location.href = "personal-account.html";
+            window.location.href = "i-personal-account.html";
         }
     });
 
@@ -271,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     redirect = true;
                     break;
                 default:
+                    showNotification('Неверный код доступа.');
                     return;
             }
 
@@ -280,22 +294,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (redirect) {
                 localStorage.setItem('accessLevel', accessLevel);
-                fetch('personal-account.html')
+                fetch('i-personal-account.html')
                     .then(response => {
                         if (response.ok) {
-                            window.location.href = 'personal-account.html';
+                            window.location.href = 'i-personal-account.html';
                         } else {
-                            showNotification('Страница personal-account.html не найдена.');
+                            showNotification('Страница i-personal-account.html не найдена.');
                         }
                     })
                     .catch(error => {
-                        showNotification('Ошибка при доступе к personal-account.html.');
+                        showNotification('Ошибка при доступе к i-personal-account.html.');
                     });
             }
         }
     });
 
-    // Сбрасываем уровень доступа на δέлта (Дельта) при перезагрузке страницы
+    // Сбрасываем уровень доступа на δέлτα (Дельта) при перезагрузке страницы
     window.addEventListener('load', () => {
         localStorage.setItem('accessLevel', 'δέлта (Дельта)');
     });
