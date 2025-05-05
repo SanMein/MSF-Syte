@@ -62,4 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Замена пункта навигации
+    const loginLink = document.getElementById('login-link');
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        loginLink.textContent = 'ЛИЧНЫЙ КАБИНЕТ';
+        loginLink.setAttribute('href', 'i-personal-account.html');
+    }
 });
