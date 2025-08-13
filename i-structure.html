@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТРУКТУРА // MSF-043</title>
+    <link rel="stylesheet" href="css/i-structure.css">
+    <link rel="icon" type="image/png" href="img/MSF.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com  ">
+    <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js  "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js  "></script>
+</head>
+<body>
+    <div id="noise-overlay"></div>
+    <div class="background-glitch"></div>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">MSF-043</a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+            <li class="nav-item"><a href="i-contacts.html" class="nav-link">КОНТАКТЫ</a></li>
+            <li class="nav-item"><a href="i-structure.html" class="nav-link active">СТРУКТУРА</a></li>
+            <li class="nav-item"><a href="i-login.html" class="nav-link" id="login-link">ВХОД ДЛЯ ОПЕРАТИВНИКОВ</a></li>
+        </ul>
+    </nav>
+    <img src="img/MSF.png" alt="MSF Logo" class="logo">
+    <main class="content-wrapper">
+        <header class="hero-section">
+            <h1 class="animate-heading main-title">СТРУКТУРА КОМПАНИИ</h1>
+            <p class="animate-text sub-title">Иерархия и специализация частной военной компании MSF-043</p>
+        </header>
+        <section class="info-section container">
+            <div class="card animate-text">
+                <h3 class="card-title">КОМАНДНЫЙ СОСТАВ (УРОВЕНЬ К6 - ОСНОВАТЕЛИ)</h3>
+                <ul>
+                    <li><span class="highlight">Генеральный Директор</span>: Обеспечение верховного командования. Контроль финансов, разработка стратегии, координация внешних контрактов.</li>
+                    <li><span class="highlight">Операционный Директор</span>: Организация оперативных мероприятий. Планирование рейдов, управление тыловым обеспечением.</li>
+                    <li><span class="highlight">Командор</span>: Командование штурмовыми группами в полевых условиях. Принятие тактических решений. Ограничение: только боевые операции.</li>
+                </ul>
+            </div>
+            <div class="card animate-text">
+                <h3 class="card-title">ОПЕРАТИВНЫЙ СОСТАВ (УРОВНИ К1 - К5)</h3>
+                <ul>
+                    <li><span class="highlight">Старший Оператор (Уровни К4–К5)</span>: Командование оперативной группой. Координация действий в бою, выполнение поставленных задач.</li>
+                    <li><span class="highlight">Оперативник (Уровни К2–К3)</span>: Исполнение задач универсального бойца. Использование стандартного боевого снаряжения.</li>
+                    <li><span class="highlight">Рекрут (Уровень К1)</span>: Выполнение вспомогательных заданий. Ограниченный доступ к вооружению, прохождение обучения.</li>
+                </ul>
+            </div>
+            <div class="card animate-text">
+                <h3 class="card-title">СПЕЦИАЛИЗИРОВАННЫЕ ПОДРАЗДЕЛЕНИЯ</h3>
+                <ul>
+                    <li><span class="highlight">Штурмовик (Уровень К2 и выше)</span>: Проведение ближнего боя (CQB). Вооружение: дробовики (SPAS-12), автоматы (MP5, AK-74).</li>
+                    <li><span class="highlight">Снайпер (Уровень К2 и выше)</span>: Обеспечение дальней огневой поддержки и разведки. Вооружение: винтовки (VSS Vintorez, SV-98).</li>
+                    <li><span class="highlight">Сапёр (Уровень К3 и выше)</span>: Установка гранат (RGD-5), мин и ловушек. Контроль периметра и защита тыла.</li>
+                    <li><span class="highlight">Пулемётчик (Уровень К2 и выше)</span>: Подавление огневых точек противника. Прикрытие наступления и отхода. Вооружение: пулемёты (PKM, RPK-16).</li>
+                    <li><span class="highlight">Медик (Уровень К3 и выше)</span>: Оказание медицинской помощи в полевых условиях. Эвакуация раненых. Оснащение: аптечки IFAK.</li>
+                    <li><span class="highlight">Техник (Уровень К3 и выше)</span>: Модификация снаряжения (ремкомплекты, клей) вне операций. Допуск к операциям как Пулемётчик/Штурмовик (1 миссия/неделя на К3, 2 на К4+).</li>
+                </ul>
+            </div>
+            <div class="card animate-text">
+                <h3 class="card-title">ПОДДЕРЖИВАЮЩИЕ ПОДРАЗДЕЛЕНИЯ</h3>
+                <ul>
+                    <li><span class="highlight">Аналитик (Уровень К4 и выше)</span>: Проведение предоперационной разведки. Анализ карт и данных противника.</li>
+                    <li><span class="highlight">Инструктор (Уровень К4 и выше)</span>: Обучение оперативного состава. Программы по тактике и выживанию.</li>
+                    <li><span class="highlight">Логист (Уровень К3 и выше)</span>: Управление складскими запасами. Распределение лута (70% — ЧВК, 30% — личный).</li>
+                    <li><span class="highlight">Радист (Уровень К4 и выше)</span>: Обеспечение радиосвязи. Проведение радиоэлектронной борьбы (глушение сигналов).</li>
+                </ul>
+            </div>
+        </section>
+        <section class="info-section container">
+            <div class="card animate-text">
+                <h3 class="card-title">КЛАССИФИКАЦИЯ ОПЫТА (КОМГРЕЙД)</h3>
+                <ul class="comgrade-list">
+                    <li><span class="comgrade-k1">К1 - Серый (#979aaa)</span>: Рекрут. Описание: Начальный уровень. Подготовка к боевым действиям.</li>
+                    <li><span class="comgrade-k2">К2 - Зелёный (#90ee90)</span>: Рядовой. Описание: Базовые навыки. Выполнение простых заданий.</li>
+                    <li><span class="comgrade-k3">К3 - Синий (#a6caf0)</span>: Оперативник. Описание: Стандартная подготовка. Самостоятельность в группе.</li>
+                    <li><span class="comgrade-k4">К4 - Фиолетовый (#876c99)</span>: Спецназ. Описание: Высокая квалификация. Координация подразделений.</li>
+                    <li><span class="comgrade-k5">К5 - Красный (#ff4c5b)</span>: Офицер. Описание: Профессиональный уровень. Руководство операциями.</li>
+                    <li><span class="comgrade-k6">К6 - Золотой (#ffd700)</span>: Фаворит. Описание: Элитный статус. Определение стратегических задач.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="terminal-status">
+        <span class="status-text">:: SYSTEM STRUCTURE ANALYSIS ::</span>
+    </footer>
+    <script src="js/i-structure.js"></script>
+    <script src="js/noise.js"></script>
+</body>
+</html>

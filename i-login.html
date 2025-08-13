@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВХОД | MSF-043</title>
+    <link rel="stylesheet" href="css/i-login.css">
+    <link rel="icon" type="image/png" href="img/MSF.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div id="noise-overlay"></div>
+    <div class="background-glitch"></div>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">MSF-043</a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+            <li class="nav-item"><a href="i-contacts.html" class="nav-link">КОНТАКТЫ</a></li>
+            <li class="nav-item"><a href="i-structure.html" class="nav-link">СТРУКТУРА</a></li>
+            <li class="nav-item"><a href="i-login.html" class="nav-link active" id="login-link">ВХОД ДЛЯ ОПЕРАТИВНИКОВ</a></li>
+        </ul>
+    </nav>
+    <img src="img/MSF.png" alt="MSF Logo" class="logo">
+    <div class="access-level-display" id="access-level-display"></div>
+    <main class="content-wrapper">
+        <section class="info-section">
+            <div class="card login-container" id="login-container">
+                <h1 class="main-title animate-heading">АВТОРИЗАЦИЯ ОПЕРАТИВНИКА</h1>
+                <form id="login-form">
+                    <input type="text" placeholder="Логин" class="animate-input-top" required>
+                    <input type="password" placeholder="Пароль" class="animate-input-bottom" required>
+                    <button type="submit" class="btn animate-btn">ВХОД</button>
+                    <p class="animate-text">Нет аккаунта? <a href="#" id="register-switch" class="animate-bounce">Зарегистрироваться</a></p>
+                </form>
+            </div>
+            <div class="card login-container hidden" id="register-container">
+                <h1 class="main-title animate-heading">РЕГИСТРАЦИЯ ОПЕРАТИВНИКА</h1>
+                <form id="register-form">
+                    <input type="text" placeholder="Новый логин" class="animate-input-top" required>
+                    <input type="password" placeholder="Новый пароль" class="animate-input-bottom" required>
+                    <button type="submit" class="btn animate-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    <p class="animate-text">Уже есть аккаунт? <a href="#" id="login-switch" class="animate-bounce">Войти</a></p>
+                </form>
+            </div>
+            <div class="card access-container">
+                <h3 class="card-title animate-heading">ПРОВЕРКА УРОВНЯ ДОСТУПА</h3>
+                <input type="text" id="access-code" placeholder="Введите код доступа" class="animate-input-top">
+                <div id="access-status" class="animate-text status-message"></div>
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <footer class="terminal-status">
+        <span class="status-text">:: AUTHENTICATION PROTOCOL ACTIVE ::</span>
+    </footer>
+    <script src="js/i-login.js"></script>
+    <script src="js/noise.js"></script>
+</body>
+</html>
